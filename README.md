@@ -1,5 +1,18 @@
 # Xposed コピー&ペースト
 
+### AndroidManifest.xml
+- #### ホーム画面に表示せずに設定ActivityをLSPosedから開けるようにする
+```xml
+<activity
+    android:name="SettingsActivity"
+    android:exported="true">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
+    </intent-filter>
+</activity> 
+```
+
 ### XposedHelpers
 - #### クラスの取得
 ```kotlin
